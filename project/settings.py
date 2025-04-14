@@ -148,3 +148,4 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # البريد الذي ستظهر منه 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
