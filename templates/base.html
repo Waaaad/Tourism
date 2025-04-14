@@ -1,0 +1,60 @@
+{% load static %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>السياحة</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'base/style.css' %}" />
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container" style="margin-top: 5px;">
+          <p  class="nav-logo" style="margin-left: 50px;">Tourism</p>
+    
+          <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list ">
+              <li class="nav-item"><a href="{% url 'home'%}" class="nav-link active">الصفحة الرئيسية</a></li>
+              <li class="nav-item"><a href="{% url 'explore'%}" class="nav-link active"> اكتشف</a></li>
+              <li class="nav-item"><a href="#" class="nav-link active">من نحن</a></li>
+            </ul>
+    
+            <div class="nav-close"><i class="bi bi-x-lg"></i></div>
+          </div>
+    
+          <div class="nav-toggle"><i class="bi bi-list"></i></div>
+        </nav>
+      </header>
+
+
+      <main>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <footer></footer>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

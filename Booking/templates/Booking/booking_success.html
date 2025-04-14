@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5 text-center">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <p>سيتم تحويلك إلى الصفحة الرئيسية خلال لحظات...</p>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "{% url 'home' %}";
+    }, 5000);
+  </script>
+{% endblock %}

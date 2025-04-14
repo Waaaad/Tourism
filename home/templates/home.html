@@ -1,0 +1,68 @@
+{% extends 'base.html' %} <!--يورث البيس-->
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static '/home/style.css' %}" />
+
+<body dir="rtl">
+    <div class="container-fluid ">
+       
+
+        <div class="row content  ">
+            <div class="col">
+
+                <div class="row" style="margin-top: 400px;">
+                    <div class="tit text-center">
+                        <h1 class="title" style="font-size: 50px;">وجهتك للسياحة السعودية تبدأ من هنا.. </h1>
+                        <p class="description" style="font-size: 18px">كل منطقة تحكي قصة.. وكل رحلة تصنع ذكرى </p>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 50px">
+                    <a href="{% url 'explore' %}">
+                        <div class="cards-group d-flex flex-wrap justify-content-center">
+                            <div class="card ">
+                                <img src="{% static '/image/قلعة زعبل.jpeg' %}" class="card-img" alt="Aljouf">
+                                <div class="card-title">الجوف</div>
+                            </div>
+                    </a>
+
+                    <a href="{% url 'explore' %}">
+                        <div class="card">
+                            <img src="{% static '/image/املج.jpg' %}" class="card-img" alt="njj">
+                            <div class="card-title">تبوك</div>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'explore' %}">
+                        <div class="card">
+                            <img src="{% static '/image/موسم.jpg' %}" class="card-img" alt="l">
+                            <div class="card-title">الرياض</div>
+                        </div>
+                    </a>
+                    <a href="{% url 'explore' %}">
+                        <div class="card">
+                            <img src="{% static '/image/Rectangle_328_96718ecb37.jpg' %}" class="card-img" alt="l">
+                            <div class="card-title">جدة</div>
+                        </div>
+                    </a>
+                    <a href="{% url 'explore' %}">
+                        <div class="card">
+                            <img src="{% static '/image/لقطة شاشة 2025-04-14 115733.png' %}" class="card-img" alt="l">
+                            <div class="card-title">أبها</div>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+
+{% endblock %}
