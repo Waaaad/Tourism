@@ -64,7 +64,7 @@
 
                         <input type="hidden" name="event_price" value="{{ event_price }}">
                         <input type="hidden" name="event_image" value="{{ event_image }}">
-                        
+
                         <button type="submit"
                             style="padding: 12px 20px; background-color: #87b2cf; color: white; border-radius: 8px; border: none; cursor: pointer; font-size: 16px;">احجز</button>
                     </form>
@@ -80,7 +80,7 @@
                 </div>
 
                 <script>
-                    // بعد 5 ثواني (5000 مللي ثانية)، يتم التوجيه للرئيسية
+                    // بعد 5 ثواني ، يتم التوجيه للرئيسية
                     setTimeout(() => {
                         window.location.href = "{% url 'home' %}";
                     }, 5000);

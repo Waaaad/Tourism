@@ -13,12 +13,12 @@
         </div>
     </section>
 
-    
-    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3"style="margin-top: 150px;">
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3" style="margin-top: 150px;">
         <h1 class="text-white " style="margin-right: 40px;">فعاليات الشهر الحالي</h1>
-    
+
         <div class="d-flex align-items-center gap-2" style="margin-left: 30px;">
-            <div class="filter-section d-flex gap-2" >
+            <div class="filter-section d-flex gap-2">
                 <select id="city-filter" class="form-select"
                     style="background-color: rgba(0, 0, 0, 0.5); color: white; min-width: 150px;">
                     <option value="">اختر المدينة</option>
@@ -28,7 +28,7 @@
                     <option value="الجوف">الجوف</option>
                     <option value="تبوك">تبوك</option>
                 </select>
-    
+
                 <select id="type-filter" class="form-select"
                     style="background-color: rgba(0, 0, 0, 0.5);color: white; min-width: 180px;">
                     <option value="">اختر الفئة</option>
@@ -37,12 +37,14 @@
                     <option value="مغامرة">مغامرة</option>
                 </select>
             </div>
-    
-            <button class="btn btn-primary" style="background-color: #617d91; border: none;" id="search-button">ابحث</button>
-            <button class="btn btn-secondary" style="background-color: black; margin-right: 30px; " id="clear-button">مسح الفلتر</button>
+
+            <button class="btn btn-primary" style="background-color: #617d91; border: none;"
+                id="search-button">ابحث</button>
+            <button class="btn btn-secondary" style="background-color: black; margin-right: 30px; "
+                id="clear-button">مسح الفلتر</button>
         </div>
     </div>
-    
+
 
     <div id="no-results" class="text-center text-white" style="display: none; margin-top: 20px;">
         <h3>لا توجد فعاليات مطابقة للبحث</h3>
@@ -50,16 +52,19 @@
 
     <div class="d-flex flex-wrap justify-content-center gap-4 mt-5">
         {% for item in city %}
-        <div class="card" data-city="{{ item.name }}" data-title="{{ item.title }}" data-description="{{ item.description }}">
+        <div class="card" data-city="{{ item.name }}" data-title="{{ item.title }}"
+            data-description="{{ item.description }}">
             <img class="card-img" src="{{ item.image }}">
             <div class="card-body">
                 <h5 class="card-title" style="font-size: 18px;">{{ item.name }} | {{ item.title }}</h5>
                 <p style="font-size: 13px;">{{ item.description }}</p>
-        
+
                 <div data-tooltip="{{item.price}}" class="button">
                     <div class="button-wrapper">
-                        <!-- رابط الحجز -->
-                        <a href="{% url 'booking' %}?event_id={{ item.id }}&event_name={{ item.name }}&event_title={{ item.title }}&event_description={{ item.description }}&event_price={{ item.price }}&event_image={{ item.image }}" class="button-link">
+
+                        <!-- فورم الحجز -->
+                        <a href="{% url 'booking' %}?event_id={{ item.id }}&event_name={{ item.name }}&event_title={{ item.title }}&event_description={{ item.description }}&event_price={{ item.price }}&event_image={{ item.image }}"
+                            class="button-link">
                             <div class="text" style="font-size: 15px;">
                                 احجز الآن
                             </div>
@@ -76,9 +81,9 @@
                 </div>
             </div>
         </div>
-        
-        
-        
+
+
+
         {% endfor %}
     </div>
     <div style="height: 100px;"></div>

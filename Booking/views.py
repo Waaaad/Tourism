@@ -19,7 +19,7 @@ def showbooking(request):
 
 
 def booking_view(request):
-    event_price = request.GET.get("event_price", "")  # استرجاع السعر من الرابط
+    event_price = request.GET.get("event_price", "") 
     if event_price:
         event_price = event_price.replace("SR", "").strip()  # إزالة "SR" من السعر
 
@@ -28,7 +28,7 @@ def booking_view(request):
         "event_name": request.GET.get("event_name"),
         "event_title": request.GET.get("event_title"),
         "event_description": request.GET.get("event_description"),
-        "event_price": event_price,  # استخدام السعر المعدل
+        "event_price": event_price, 
         "event_image": request.GET.get("event_image"),  # ← هذا مهم
     }
     return render(request, "booking.html", context)
